@@ -42,4 +42,5 @@ Borges.Models.Book.GENERATOR_DEFAULTS = {
 };
 
 // see http://dicelog.com/babel
+// This assumes laplace distribution
 Borges.Models.Book.ALPHABET = 'ABCDEFGHIJLMNOPQRSTVXY .,';
