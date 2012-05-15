@@ -1,4 +1,8 @@
 Borges::Application.configure do
+  
+  # Support for foreman flushing to stdout properly
+  STDOUT.sync = true
+  
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on

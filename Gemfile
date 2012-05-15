@@ -20,7 +20,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'rails-backbone'
 gem 'jquery-rails'
+gem 'gon'
+gem 'rabl'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -32,7 +35,28 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
+# and stages
+gem 'capistrano-ext'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'foreman'
+gem 'thin'
+#gem 'em-http-request'
+
+group :test, :development do
+    gem 'rspec'
+    gem 'rspec-mocks'
+    gem 'guard'
+    gem 'guard-rspec'
+    gem 'guard-test'
+    gem 'ruby-prof'
+    gem 'rspec-rails', "~> 2.6"
+    gem 'jasmine'
+    gem 'jasminerice'
+    gem 'guard-jasmine'
+
+    #gem 'ruby-debug19', :require => 'ruby-debug'
+end
