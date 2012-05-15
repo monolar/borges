@@ -60,6 +60,17 @@ var MersenneTwister = function(seed) {
         seed = new Date().getTime();
     }
     this.seed = seed;
+    var numericSeed = this.seed;
+    if (typeof numericSeed === 'string') {
+        var tmpSeedStr = "";
+        for(var charPos in numericSeed) {
+              tmpSeedStr += numericSeed.charCodeAt(charPos);
+        }
+        numericSeed = parseInt(tmpSeedStr, 10);
+    }
+    
+
+    //console.log("Mersenne Twister using seed: " + this.seed + " - " + numericSeed);
     /* Period parameters */
     this.N = 624;
     this.M = 397;
@@ -70,7 +81,7 @@ var MersenneTwister = function(seed) {
     this.mt = new Array(this.N); /* the array for the state vector */
     this.mti=this.N+1; /* mti==N+1 means mt[N] is not initialized */
     
-    this.init_genrand(this.seed);
+    this.init_genrand(numericSeed);
 };
  
 /* initializes mt[N] with a seed */
